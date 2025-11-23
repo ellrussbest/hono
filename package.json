@@ -1,0 +1,19 @@
+{
+  "name": "firebase-backend",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "format": "prettier --write .",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "hono": "^4.10.6"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+    "prettier": "^3.6.2",
+    "wrangler": "^4.4.0"
+  }
+}

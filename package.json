@@ -1,8 +1,9 @@
 {
   "name": "firebase-backend",
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "pnpm lint && wrangler dev",
+    "dev": "wrangler dev",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
@@ -10,8 +11,12 @@
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
+    "@hono/zod-openapi": "^1.1.5",
+    "consola": "^3.4.2",
     "cross-env": "^10.1.0",
-    "hono": "^4.10.6"
+    "date-fns": "^4.1.0",
+    "hono": "^4.10.6",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",

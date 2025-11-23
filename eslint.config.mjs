@@ -4,13 +4,13 @@ export default antfu(
   {
     type: 'app',
     typescript: true,
+    stylistic: false,
     formatters: true,
   },
   {
     rules: {
       'ts/no-redeclare': 'off',
       'style/semi': 'off',
-      'ts/consistent-type-definitions': ['error', 'type'],
       'no-console': ['warn'],
       'antfu/no-top-level-await': ['off'],
       'node/prefer-global/process': ['off'],
@@ -33,7 +33,7 @@ export default antfu(
 
         {
           selector: 'variable',
-          format: ['camelCase', 'UPPER_CASE'],
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
           leadingUnderscore: 'allow',
         },
         {

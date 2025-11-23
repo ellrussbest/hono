@@ -2,9 +2,11 @@
   "name": "firebase-backend",
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "pnpm lint && wrangler dev",
     "format": "prettier --write .",
-    "deploy": "wrangler deploy --minify",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "deploy": "pnpm lint && wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
@@ -12,7 +14,10 @@
     "hono": "^4.10.6"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^6.2.0",
     "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+    "eslint": "^9.38.0",
+    "eslint-plugin-format": "^1.0.2",
     "prettier": "^3.6.2",
     "wrangler": "^4.4.0"
   }

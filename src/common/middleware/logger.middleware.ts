@@ -52,21 +52,15 @@ export function createLogger(options: LoggerOptions = {}): MiddlewareHandler {
 
     const message = `${c.req.method} ${c.req.path} → ${status} (${duration}ms)`;
 
-    const shouldIncludeDetails =
-      criticality === 'high' || criticality === 'critical';
+    const includeDetails = criticality === 'high' || criticality === 'critical';
 
-    const requestHeaders = shouldIncludeDetails
+    const requestHeaders = includeDetails
       ? Object.fromEntries(c.req.raw.headers.entries())
       : undefined;
 
-    const responseHeaders = shouldIncludeDetails
+    const responseHeaders = includeDetails
       ? Object.fromEntries(c.res.headers.entries())
       : undefined;
-
-    const requestBodyForLog =
-      shouldIncludeDetails && requestBody !== undefined
-        ? requestBody
-        : undefined;
 
     const payload: LogPayload = {
       level,
@@ -83,7 +77,7 @@ export function createLogger(options: LoggerOptions = {}): MiddlewareHandler {
         path: c.req.path,
         url: c.req.url,
         ...(requestHeaders && { headers: requestHeaders }),
-        ...(requestBodyForLog && { body: requestBodyForLog }),
+        ...(requestBody && { body: requestBody }),
       },
       response: {
         status: c.res.status,

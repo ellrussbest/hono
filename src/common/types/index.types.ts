@@ -1,3 +1,5 @@
+import { OpenAPIHono } from '@hono/zod-openapi';
+
 import type { ConsolaInstance, LogType } from 'consola';
 
 import type { EnvType } from '@/common/schemas/env.schema';
@@ -30,3 +32,5 @@ declare module 'hono' {
     log: ConsolaInstance;
   }
 }
+
+export type App = OpenAPIHono<AppBindings>;

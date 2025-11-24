@@ -22,13 +22,15 @@
   //     "bucket_name": "my-bucket"
   //   }
   // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
+  "d1_databases": [
+    {
+      "binding": "DATABASE",
+      "database_name": "ifkafin",
+      "database_id": "85e25cd4-63df-4a9d-8b0b-fc1b75b86d85",
+      "migrations_dir": "drizzle/migrations",
+      // "remote": true
+    },
+  ],
   // "ai": {
   //   "binding": "AI"
   // },

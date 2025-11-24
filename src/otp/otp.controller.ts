@@ -12,7 +12,7 @@ const otpController = createController();
 
 otpController.openapi(
   createRoute({
-    tags: ["Otp"],
+    tags: ['Otp'],
     method: 'get',
     path: '/hello',
     responses: {
@@ -36,7 +36,7 @@ otpController.openapi(
 
 otpController.openapi(
   createRoute({
-    tags: ["Otp"],
+    tags: ['Otp'],
     method: 'get',
     path: '/goodbye',
     responses: {

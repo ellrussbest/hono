@@ -1,6 +1,6 @@
 import { configureOpenApi } from '@/common/lib/configure-open-api';
 import { createApp } from '@/common/lib/create-app';
-import { App } from '@/common/types/index.types';
+import type { App } from '@/common/types/index.types';
 import { otpController } from '@/otp/otp.controller';
 
 const app = createApp();

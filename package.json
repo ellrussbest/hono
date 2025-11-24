@@ -1,14 +1,25 @@
 {
   "name": "firebase-backend",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "wrangler dev",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
     "deploy": "pnpm lint && wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "deploy:firebase": "pnpm run build && firebase deploy --only functions",
+    "d1:create": "pnpm dlx wrangler d1 create ifkafin",
+    "drizzle:generate": "pnpm drizzle-kit generate",
+    "drizzle:migrate": "pnpm drizzle-kit migrate",
+    "drizzle:push": "pnpm drizzle-kit push",
+    "drizzle:pull": "pnpm drizzle-kit pull",
+    "drizzle:check": "pnpm drizzle-kit check",
+    "drizzle:up": "pnpm drizzle-kit up",
+    "drizzle:drop": "pnpm drizzle-kit drop",
+    "drizzle:studio": "pnpm drizzle-kit studio",
+    "db:seed": "ts-node -r tsconfig-paths/register ./src/drizzle-orm/drizzle-orm.seed.ts"
   },
   "dependencies": {
     "@hono/zod-openapi": "^1.1.5",
@@ -16,6 +27,7 @@
     "consola": "^3.4.2",
     "cross-env": "^10.1.0",
     "date-fns": "^4.1.0",
+    "drizzle-orm": "^0.44.7",
     "hono": "^4.10.6",
     "http-status-codes": "^2.3.0",
     "zod": "^4.1.12"
@@ -23,6 +35,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",
     "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+    "drizzle-kit": "^0.31.7",
     "eslint": "^9.38.0",
     "eslint-plugin-format": "^1.0.2",
     "prettier": "^3.6.2",
